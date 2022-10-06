@@ -1,4 +1,4 @@
-# H1 Evelyn Siu
+# Evelyn Siu
 
 
 ![Image did not load](data_selfie.jpg)
