@@ -20,6 +20,8 @@ as well as homework:
 
 ### Data source: 
 OpenStates, https://openstates.org/data/session-json/
+#### NOTE: File (even just for one state) was too large to include in GitHub. Suggestions welcome for how to pare down the scope of this project to make it more approachable!
+
 - ### Description of data: 
 This data shows all of the bills that have been introduced, and then subsequently, what has happened to them, in all 50 states. All of the bills are labeled with subject keywords, as well as the result of the bill, and if available, the votes taken on the bill.
 - ### Why you are interested in this topic: 
