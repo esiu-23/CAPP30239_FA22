@@ -18,3 +18,8 @@ Central repository for all CAPP Data Viz class work & assignments
  - script.js (building SVGs)
  - covid.csv (COVID cases by country data)
  
+ [week_4](https://github.com/esiu-23/CAPP30239_FA22/tree/main/week_04)
+ 
+ [week_5](https://github.com/esiu-23/CAPP30239_FA22/tree/main/week_05)
+ 
+ 
