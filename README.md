@@ -19,6 +19,14 @@ Central repository for all CAPP Data Viz class work & assignments
  - covid.csv (COVID cases by country data)
  
  [week_4](https://github.com/esiu-23/CAPP30239_FA22/tree/main/week_04)
+- line.html
+- line.js
+- area.html
+- area.js
+- multiline.html
+- multiline.js
+- [homework.html](https://github.com/esiu-23/CAPP30239_FA22/blob/main/week_04/homework.html)
+
  
  [week_5](https://github.com/esiu-23/CAPP30239_FA22/tree/main/week_05)
  
