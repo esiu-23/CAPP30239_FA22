@@ -6,56 +6,56 @@ const svg = d3.select("#chart")
     .append("svg")
     .attr("viewBox", [0, 0, width, height]);
 
-d3.csv('penguins.csv').then(data => {
+d3.csv('a3cleanedonly2015.csv').then(data => {
   
   let x = d3.scaleLinear()
-    .domain(d3.extent(data, d => d.body_mass_g)).nice()
+    .domain(d3.extent(data, d => d.Date)).nice()
     .range([margin.left, width - margin.right]);
 
   let y = d3.scaleLinear()
-    .domain(d3.extent(data, d => d.flipper_length_mm)).nice()
+    .domain(d3.extent(data, d => d.Age)).nice()
     .range([height - margin.bottom, margin.top]);
 
   svg.append("g")
     .attr("transform", `translate(0,${height - margin.bottom})`)
     .attr("class", "x-axis")
-    .call(d3.axisBottom(x).tickFormat(d => (d/1000) + "kg").tickSize(-height + margin.top + margin.bottom))
+    .call(d3.axisBottom(x).tickSize(-height + margin.top + margin.bottom))
 
   svg.append("g")
     .attr("transform", `translate(${margin.left},0)`)
     .attr("class", "y-axis")
-    .call(d3.axisLeft(y).tickSize(-width + margin.left + margin.right))
+    .call(d3.axisLeft(y).tickFormat(d => d + "yrs").tickSize(-width + margin.left + margin.right))
 
-//   svg.append("g")
-//     .attr("fill", "black")
-//     .selectAll("circle")
-//     .data(data)
-//     .join("circle")
-//     .attr("cx", d => x(d.body_mass_g))
-//     .attr("cy", d => y(d.flipper_length_mm))
-//     .attr("r", 2)
-//     .attr("opacity", 0.75);
+  svg.append("g")
+    .attr("fill", "black")
+    .selectAll("circle")
+    .data(data)
+    .join("circle")
+    .attr("cx", d => x(d.month_of_date))
+    .attr("cy", d => y(d.Age))
+    .attr("r", 2)
+    .attr("opacity", 0.75);
 
-//   const tooltip = d3.select("body").append("div")
-//     .attr("class", "svg-tooltip")
-//     .style("position", "absolute")
-//     .style("visibility", "hidden");
+  const tooltip = d3.select("body").append("div")
+    .attr("class", "svg-tooltip")
+    .style("position", "absolute")
+    .style("visibility", "hidden");
 
-//   d3.selectAll("circle")
-//     .on("mouseover", function(event, d) {
-//       d3.select(this).attr("fill", "red");
-//       tooltip
-//         .style("visibility", "visible")
-//         .html(`Species: ${d.species}<br />Island: ${d.island}<br />Weight: ${d.body_mass_g/1000}kg`);
-//     })
-//     .on("mousemove", function(event) {
-//       tooltip
-//         .style("top", (event.pageY - 10) + "px")
-//         .style("left", (event.pageX + 10) + "px");
-//     })
-//     .on("mouseout", function() {
-//       d3.select(this).attr("fill", "black");
-//       tooltip.style("visibility", "hidden");
-//     })
+  d3.selectAll("circle")
+    .on("mouseover", function(event, d) {
+      d3.select(this).attr("fill", "red");
+      tooltip
+        .style("visibility", "visible")
+        .html(`Name: ${d.name}<br />Age: ${d.age} yrs<br />Gender: ${d.gender}`);
+    })
+    .on("mousemove", function(event) {
+      tooltip
+        .style("top", (event.pageY - 10) + "px")
+        .style("left", (event.pageX + 10) + "px");
+    })
+    .on("mouseout", function() {
+      d3.select(this).attr("fill", "black");
+      tooltip.style("visibility", "hidden");
+    })
     
 });

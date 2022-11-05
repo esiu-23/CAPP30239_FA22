@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework - 3 charts</title>
+    <style>
+         * {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #container {
+      max-width: 2000px;
+      margin: 0 auto;
+    }
+
+    a { color: #369;}
+
+    svg1 { width: 100%; }
+    svg2 { width: 100%; }
+    svg3 { width: 100%; }
+
+    text {
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+
+    path.domain { display: none; }
+
+    line {
+      stroke: #eee;
+      stroke-dasharray: 1px;
+    }
+
+    .race { cursor: default; }
+    
+    .race path {
+      stroke-width: 1.5;
+      opacity: 0.75;
+    }
+
+    .highlight path {
+      stroke: steelblue;
+      opacity: 1;
+    }
+
+    .highlight text { fill: steelblue; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Manner of Death by Police in 2015</h1>
+        <p>
+            3 different charts of how people died at the hands of police.
+        </p>
+        <h3> Count of Manner of Death by Police</h3>
+        <div id="chart1"></div>
+        <h3> Number of Deaths by Police by Date</h3>  
+        <div id="chart2"></div>
+        <h3> Number of Deaths by Police by Date & Race </h3>    
+        <div id="chart3"></div>
+    </div>
+
+</body>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="bar_hw.js"></script> 
+    <script src="scatterplot-age.js"></script> 
+    <script src="multiline_hw.js"></script> 
+</html>
