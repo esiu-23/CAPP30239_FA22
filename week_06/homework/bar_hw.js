@@ -5,7 +5,7 @@ let height = 400,
 
 const svg = d3.select("#chart1")
     .append("svg")
-    .attr("viewbox", [0, 0, width, height]);
+    .attr("viewBox", [0, 0, width, height]);
 
 d3.csv("counts_death.csv").then(data => {
     for (let d of data) {
