@@ -1,13 +1,14 @@
-let height3 = 500,
-    width3 = 800,
-    margin3 = ({ top: 25, right: 30, bottom: 35, left: 30 })
-    innerwidth3 = width3 - margin3.left - margin3.right;
+(function multiline() {
+let height = 400,
+    width = 600,
+    margin = ({ top: 25, right: 30, bottom: 35, left: 30 })
+    innerwidth = width - margin.left - margin.right;
 
-const svg3 = d3.select("#chart3")
-  .append("svg3")
-  .attr("viewBox", [0, 0, width3, height3]);
+const svg = d3.select("#chart3")
+  .append("svg")
+  .attr("viewBox", [0, 0, width, height]);
 
-d3.csv("date_deaths.csv").then(data => {
+d3.csv("date_deaths_sorted.csv").then(data => {
   let timeParse = d3.timeParse("%Y-%m-%d");
 
   let race = new Set();
@@ -20,19 +21,19 @@ d3.csv("date_deaths.csv").then(data => {
 
   let x = d3.scaleTime()
     .domain(d3.extent(data, d => d.Date))
-    .range([margin3.left, width3 - margin3.right]);
+    .range([margin.left, width - margin.right]);
 
   let y = d3.scaleLinear()
     .domain(d3.extent(data, d => d.deaths))
-    .range([height3 - margin3.bottom, margin3.top]);
+    .range([height - margin.bottom, margin.top]);
 
-  svg3.append("g")
-    .attr("transform", `translate(0,${height3 - margin3.bottom})`)
+  svg.append("g")
+    .attr("transform", `translate(0,${height - margin.bottom})`)
     .call(d3.axisBottom(x));
 
-  svg3.append("g")
-    .attr("transform", `translate(${margin3.left},0)`)
-    .call(d3.axisLeft(y).tickSize(-innerwidth3));
+  svg.append("g")
+    .attr("transform", `translate(${margin.left},0)`)
+    .call(d3.axisLeft(y).tickSize(-innerwidth));
 
   let line = d3.line()
     .x(d => x(d.Date))
@@ -41,7 +42,7 @@ d3.csv("date_deaths.csv").then(data => {
   for (let r of race) {
     let raceData = data.filter(d => d.Race === r);
 
-    let g = svg3.append("g")
+    let g = svg.append("g")
       .attr("class", "race")
       .on('mouseover', function () {
         d3.selectAll(".highlight").classed("highlight", false);
@@ -69,3 +70,4 @@ d3.csv("date_deaths.csv").then(data => {
   }
   
 });
+})();
