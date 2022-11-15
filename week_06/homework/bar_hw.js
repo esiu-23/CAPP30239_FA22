@@ -1,7 +1,7 @@
 (function bar(){
 let height = 300,
     width = 400,
-    margin = ({ top: 25, right: 30, bottom: 35, left: 40 });
+    margin = ({top: 25, right: 30, bottom: 35, left: 40});
 
 const svg = d3.select("#chart1")
     .append("svg")
