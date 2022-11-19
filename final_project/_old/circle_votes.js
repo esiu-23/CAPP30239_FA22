@@ -1,19 +1,15 @@
-(function dumbbells(){
-    let height = 600,
-    width = 900,
+(function circles(){
+    let height = 400,
+    width = 400,
     margin = ({top: 25, right: 30, bottom: 35, left: 10});
 
     // Create SVG & Enter data
-    const svg = d3.select("#chart1")
+    const svg = d3.select("#chart3")
     .append("svg")
     .attr("viewBox", [0, 0, width, height]);
     
-    d3.csv('IL_cleaned_actions.csv').then(dataset => {
-        let timeParse = d3.timeParse("%Y-%m-%d");
-
-        for (let d of dataset){
-            d.Created_Date = timeParse(d.Created_Date)
-            d.Latest_Date = timeParse(d.Latest_Date);
+    d3.csv('IL_cleaned_votes.csv').then(dataset => {
+            d.votes = +d.votes
         }
     console.log(dataset);
 
@@ -36,8 +32,6 @@
     .classed("y axis", true)
     .call(d3.axisLeft(vertScale))
     .attr("transform", `translate(${margin.left-5},0)`);
-    
-    // let barCenter = vertScale.bandwidth() / 2;
 
     // Define tooltip
     const tooltip = d3.select("body").append("div")
@@ -46,22 +40,20 @@
     .style("visibility", "hidden");
 
     // Put SVG together
-    let chart1 = svg.append("g")
-    .classed("chart1", true)
+    let chart2 = svg.append("g")
+    .classed("chart2", true)
     .attr("transform", `translate(${height - margin.bottom})`)
 
-    // Create chart elements
-    chart1.selectAll("rect.bar")
+    //  Line 
+    chart2.selectAll("line")
     .data(dataset)
-    .join("rect")
-    .classed("bar", true)
-    .attr("y", (d)=> vertScale(d.Title))
-    .attr("x", (d)=> horzScale(d.Created_Date))
-    .attr("height", 3)
-    .attr("width", (d) => horzScale(d.Latest_Date - d.Created_Date))
-    .attr("fill", "gray")
+    .join("line")
+    .attr("x0", (d)=>(vertScale(d.Created_Date)))
+    .attr("x1", (d)=>(horzScale(d.Latest_Date)))
+    .attr("y0", (d)=>(vertScale(d.Title)))
+    .attr("y1", (d)=>(vertScale(d.Title)))
 
-    chart1.selectAll("circle.Created_Date")
+    chart2.selectAll("circle.Created_Date")
     .data(dataset)
     .join("circle")
     .classed("Created_Date", true)
@@ -74,6 +66,12 @@
         d3.select(this).attr("fill", "yellow");
         tooltip
           .style("visibility", "visible")
+          .style("position", "absolute")
+          .style("background-color", "white")
+          .style("border", "solid")
+          .style("border-width", "1px")
+          .style("border-radius", "5px")
+          .style("padding", "10px")
           .html(`Title: ${d.Title} <br> Created Date: ${d.Created_Date} <br> Result: ${d.Latest_Description}`);
       })
       .on("mousemove", function(event) {
@@ -86,7 +84,7 @@
         tooltip.style("visibility", "hidden");
       })
 
-    chart1.selectAll("circle.Latest_Date")
+    chart2.selectAll("circle.Latest_Date")
     .data(dataset)
     .join("circle")
     .classed("Latest_Date", true)
@@ -111,8 +109,12 @@
         tooltip.style("visibility", "hidden");
       })
 
-    chart1.call(horzAxis)
-    chart1.call(vertAxisLeft)
+    line = d3.line()
+    .x(d => walkX(d.step))
+    .y(d => walkY(d.value))
+
+    chart2.call(horzAxis)
+    chart2.call(vertAxisLeft)
 
     return svg.node();
 });

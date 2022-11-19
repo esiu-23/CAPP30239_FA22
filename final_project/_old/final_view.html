@@ -6,16 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Final Project</title>
     <style>
+        #container {
+        max-width: 3000px;
+        margin: 0 auto;
+        }
+        
+        svg { width: 100%; }
+        
         .title {
         font: bold 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
         }
 
         .axis {
         font: 10px sans-serif;
-        }
-
-        .tooltip {
-            font: 12px sans-serif;
         }
         
     </style>
@@ -25,11 +28,12 @@
         <h1>Final Project - Climate Change Legislation Over Time</h1>
         <h3> Climate Change Legislation in Illinois Over Time</h3>
         <div id="chart1"></div>
+        <h3> Climate Change Legislation in the US Over Time</h3>
+        <div id="chart2"></div>
     </div>
 
 </body>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="dumbbells_IL.js"></script> 
-    <!-- <script src="scatterplot-age.js"></script> 
-    <script src="multiline_hw.js"></script>  -->
+    <script src="dumbbells_US.js"></script>
 </html>

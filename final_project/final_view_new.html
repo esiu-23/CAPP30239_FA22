@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project</title>
+    <style>
+      
+      #container {
+        max-width: 3000px;
+        margin: 0 auto;
+        }
+        
+        svg { width: 100%; }
+
+        .axis {
+        font: 10px sans-serif;
+        }
+      
+      body {
+        font-family:"avenir next", Arial, sans-serif;
+        font-size: 30px;
+        color: #696969;
+      }
+      .node:hover{
+          stroke-width: 7px !important;
+          opacity: 1 !important;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>What happened during the 102nd session of the Illinois Congress?</h1>
+        <h3>Congress introduced 1838 bills, passed 2214 of them, and referred bills to committees 35916 times. 
+          <br> 1102 bills became law. 
+        </h3>
+        <p>
+          Open questions: My tooltip isn't working right now, it's undefined. Can you help me debug that?
+          <br> How do I add a legend?
+          <br> How do I reduce the amount of whitespace?
+        </p>
+        <div id="chart"></div>
+   
+
+        <h3>HB 1443, a bill regulating technology, took 5 months to become law. 
+          <br>It spent 4 months in the House, 1 month in the Senate, and 3 weeks in the Executive office. 
+        </h3>
+        <p>Open questions: How do I add a line between the dots? I'm trying to show that the bill follows a <br>
+        non-linear path from introduction to becoming law.
+        <br> How do I wrap the text on the x-axis? 
+        <br> How do I change the font & text size of my tooltip?
+        <br> How do I add a legend? 
+        </p>
+        <div id="chart2"></div>
+        <h3>The most common bill topics in the 102nd Illinois Congress focused on technology, 
+          <br>across a wide variety of topics - government, finance, health, revenue, and education.
+          <br> A large number of bills also focused on crime-related topics as well as regulating tech.
+        </h3>
+        <p>Open questions: How do I make the fonts and sizes consistent across all 3 charts?<br>
+        How do I make the color scheme consistent with the other charts? 
+        </p>
+        <div id="chart3"></div>
+    </div>
+</body>
+    <script src="https://d3js.org/d3.v7.js"></script> 
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="actions-packed.js"></script> 
+    <script src="scatterplot.js"></script> 
+    <script src="ring.js"></script> 
+   
+</html>
