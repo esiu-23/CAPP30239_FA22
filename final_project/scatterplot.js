@@ -1,12 +1,13 @@
-let height = 300,
-    width = 800,
-    margin = ({ top: 25, right: 30, bottom: 35, left: 50 });
-  
-const svg = d3.select("#chart2")
-    .append("svg")
-    .attr("viewBox", [0, 0, width, height]);
 
-d3.csv('hb_1443.csv').then(data => {
+  let height = 300,
+    width = 1100,
+    margin = ({ top: 25, right: 30, bottom: 50, left: 50 });
+  
+  const svg = d3.select("#chart2")
+      .append("svg")
+      .attr("viewBox", [0, 0, width, height]);
+
+  d3.csv('hb_1443.csv').then(data => {
     
     let timeParse = d3.timeParse("%Y-%m-%d");
 
@@ -31,11 +32,23 @@ d3.csv('hb_1443.csv').then(data => {
     .attr("transform", `translate(0,${height - margin.bottom})`)
     .attr("class", "x-axis")
     .call(d3.axisBottom(x))
+    .selectAll(".tick text")
+    .call(wrap, x.bandwidth())
 
   svg.append("g")
     .attr("transform", `translate(${margin.left},0)`)
     .attr("class", "y-axis")
     .call(d3.axisLeft(y))
+
+  let line = d3.line()
+    .x(d => x(d.classifcation))
+    .y(d => y(d.date));
+
+  svg.append("path")
+    .datum(data)
+    .attr("d", line)
+    .attr("fill", "lightblue")
+    .attr("stroke", "steelblue");
 
   svg.append("g")
     .selectAll("circle")
@@ -45,7 +58,8 @@ d3.csv('hb_1443.csv').then(data => {
     .attr("cy", d => y(d.date))
     .attr("r", 4)
     .attr("opacity", 0.75)
-    .style("fill", function(d){return color(d.Chamber)});
+    .style("fill", d => color(d.Chamber));
+
 
   const tooltip = d3.select("body").append("div")
     .attr("class", "svg-tooltip")
@@ -66,8 +80,34 @@ d3.csv('hb_1443.csv').then(data => {
         .style("left", (event.pageX + 10) + "px");
     })
     .on("mouseout", function() {
-      d3.select(this).style("fill", function(d){ return color(d.Chamber)})
+      d3.select(this).style("fill", d => color(d.Chamber))
       tooltip.style("visibility", "hidden");
     })
     
-});
+    function wrap(text, width) {
+      text.each(function() {
+        var text = d3.select(this),
+            words = text.text().split(/\s+/).reverse(),
+            word,
+            line = [],
+            lineNumber = 0,
+            lineHeight = 1.1, // ems
+            y = text.attr("y"),
+            dy = parseFloat(text.attr("dy")),
+            tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em")
+        while (word = words.pop()) {
+          line.push(word)
+          tspan.text(line.join(" "))
+          if (tspan.node().getComputedTextLength() > width) {
+            line.pop()
+            tspan.text(line.join(" "))
+            line = [word]
+            tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", `${++lineNumber * lineHeight + dy}em`).text(word)
+          }
+        }
+      })
+
+    }
+
+  });
+    

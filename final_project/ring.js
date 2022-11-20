@@ -1,6 +1,6 @@
 d3.csv('types.csv').then((data) => {
-  const height = 400,
-    width = 600,
+  const height = 500,
+    width = 800,
     innerRadius = 125,
     outerRadius = 175,
     labelRadius = 200;
@@ -25,7 +25,7 @@ d3.csv('types.csv').then((data) => {
     .selectAll("path")
     .data(arcs)
     .join("path")
-    .attr("fill", (d, i) => d3.schemeCategory10[i])
+    .attr("fill", (d, i) => d3.schemeSet3[i])
     .attr("d", arc);
 
   svg.append("g")

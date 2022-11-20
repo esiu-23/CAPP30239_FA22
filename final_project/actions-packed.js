@@ -1,8 +1,8 @@
 
 // set the dimensions and margins of the graph
 (function bubbles(){
-    let height = 400,
-    width = 600,
+    let height = 300,
+    width = 400,
     margin = ({ top: 25, right: 30, bottom: 35, left: 40 });
 
     const svg = d3.select("#chart")
@@ -41,7 +41,7 @@
           d3.select(this);
           tooltip
             .style("visibility", "visible")
-            .html('<u>' + d.Actions + '</u>' + "<br>" + d.Count + " times");
+            .html('<u>' + d.Action + '</u>' + "<br>" + d.Count + " times");
         })
         .on("mousemove", function(event) {
           tooltip
@@ -50,7 +50,9 @@
         })
         .on("mouseout", function() {
           d3.select(this);
-          tooltip.style("visibility", "hidden");
+          tooltip
+            .style("fill", d => color(d.Chamber))
+            .style("visibility", "hidden");
         })
 
     // // select the circle
@@ -92,13 +94,6 @@
         .style("fill-opacity", 0.8)
         .attr("stroke", "black")
         .style("stroke-width", 1)
-        // .on("mouseover", mouseover) // What to do when hovered
-        // .on("mousemove", mousemove)
-        // .on("mouseleave", mouseleave)
-        .call(d3.drag() // call specific function when circle is dragged
-            .on("start", dragstarted)
-            .on("drag", dragged)
-            .on("end", dragended));
 
     // Features of the forces applied to the nodes:
     var simulation = d3.forceSimulation()
@@ -116,21 +111,6 @@
                 .attr("cy", function(d){ return d.y; })
         });
 
-    // What happens when a circle is dragged?
-    function dragstarted(d) {
-        if (!d3.event.active) simulation.alphaTarget(.03).restart();
-        d.fx = d.x;
-        d.fy = d.y;
-    }
-    function dragged(d) {
-        d.fx = d3.event.x;
-        d.fy = d3.event.y;
-    }
-    function dragended(d) {
-        if (!d3.event.active) simulation.alphaTarget(.03);
-        d.fx = null;
-        d.fy = null;
-    }
 
     })
 
