@@ -1,6 +1,9 @@
-d3.csv('types.csv').then((data) => {
-  const height = 500,
-    width = 800,
+(function beeswarm(){
+  
+  d3.csv('types.csv').then((data) => {
+  
+    let height = 1000,
+    width = 1000,
     innerRadius = 125,
     outerRadius = 175,
     labelRadius = 200;
@@ -41,8 +44,8 @@ d3.csv('types.csv').then((data) => {
     })
     .join("tspan")
     .attr("x", 0)
-    .attr("y", (d, i) => `${i * 1.1}em`)
-    .attr("font-weight", (d, i) => i ? null : "bold")
+    .attr("y", (d, i) => `${i * 1}em`)
+    // .attr("font-weight", (d, i) => i ? null : "bold")
     .text(d => d);
 
   svg.append("text")
@@ -50,6 +53,9 @@ d3.csv('types.csv').then((data) => {
     .attr("font-weight", "bold")
     .attr("text-anchor", "middle")
     .attr("alignment-baseline", "middle")
-    .text("Most common topics")
+    .text("Top 10 bill topics")
     .style("font-size", 20);
+
 });
+
+})();

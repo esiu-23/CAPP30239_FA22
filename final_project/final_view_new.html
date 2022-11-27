@@ -5,64 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Final Project</title>
-    <style>
-      
-      #container {
-        max-width: 3000px;
-        margin: 0 auto;
-        }
-        
-        svg { width: 100%; }
-
-        .axis {
-        font: 10px sans-serif;
-        }
-      
-      body {
-        font-family:"avenir next", Arial, sans-serif;
-        font-size: 30px;
-        color: #696969;
-      }
-      .node:hover{
-          stroke-width: 7px !important;
-          opacity: 1 !important;
-        }
-        
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="container">
         <h1>What happened during the 102nd session of the Illinois Congress?</h1>
-        <h3>Congress introduced 1838 bills, passed 2214 of them, and referred bills to committees 35916 times. 
-          <br> 1102 bills became law. 
-        </h3>
-        <p>
-          <a href="https://github.com/esiu-23/CAPP30239_FA22/blob/pages/final_project/hb_1443.csv">Chart Data</a>
-          <br>Open questions: My tooltip isn't working right now, it's undefined. Can you help me debug that?
-          <br> How do I add a legend?
-          <br> How do I reduce the amount of whitespace?
-        </p>
-        <div id="chart"></div>
+          
+          <p>In the House, the Democrats held a majority of 73 to 45 (D to R), and in the Senate, the Democrats held a majority of 41 to 18 (D to R). The Democrats also held the governorship, giving them the state government trifecta (when one party holds both legislative chambers and the executive branch). According to the ACLU, the Illinois General Assembly (House & Senate) meets each year from January to May. They then reconvene for two weeks in the Fall to consider the Governor’s vetoes. Special sessions outside of this time frame may be called by the Governor or a joint proclamation by the presiding officers of both chambers. </p>
+          <p>When the House & Senate are in session, their main duties are to develop, discuss, and pass state legislation. To become a bill, a bill must first be introduced and filed with the chamber clerk. A bill can be introduced in either the Senate or the House, but ultimately must be passed in both chambers before it is passed to the governor for review. After a bill is introduced, it is referred to a committee, which is a smaller group of legislators that focus on a specific topic. For example, there are committees that focus on consumer protection, social services, and the energy and environment. Here is a full list of all of Illinois’ state committees. After the committee votes to continue with the bill (most of the time, bills will not make it through the committee process), the chamber will debate the bill, propose possible amendments, and then ultimately vote on whether to pass the bill or not. If the chamber votes to pass the bill, the bill will then get passed to the other chamber (House or Senate), where the same process will happen all over again. Finally, if a bill makes it through both chambers, it will get passed to the governor for review & signing. To pass, a bill needs 60 votes in the House and 30 votes in the Senate.If the General Assembly chooses to override a veto by the Governor, a higher threshold of votes is needed. If the governor signs the bill, the bill finally becomes law!  If the governor vetoes the bill, the legislative branch can choose to override the veto with 71 votes in the House and 36 votes in the Senate. This happened once during the 102nd Illinois Congress. </p>
+          
+          <h3>Congress Members in Power</h3>
+          <div id="chart0"></div>
+        
+          <h3>Congress introduced 1,838 bills, referred bills to committees 35916 times, and passed 2,214 of them.  
+            <br> In total, 1,102 bills became law. 
+          </h3>
+          <p>
+            <a href="https://github.com/esiu-23/CAPP30239_FA22/blob/pages/final_project/hb_1443.csv">Chart Data</a>
+            <br>Open questions: I want to append text labels to the bubbles. How do I do that?
+          </p>
+          <div id="chart"></div>
 
-        <h3>HB 1443, a bill regulating technology, took 5 months to become law. 
-          <br>It spent 4 months in the House, 1 month in the Senate, and 3 weeks in the Executive office. 
-        </h3>
-        <p>
-          <a href="https://github.com/esiu-23/CAPP30239_FA22/blob/pages/final_project/action_counts-2.csv">Chart Data</a>
-          <br>Open questions: How do I add a line between the dots? I'm trying to show that the bill follows a <br>
-        non-linear path from introduction to becoming law.
-        <br> How do I change the font & text size of my tooltip?
-        <br> How do I add a legend? 
-        </p>
-        <div id="chart2"></div>
-        <h3>The most common bill topics in the 102nd Illinois Congress focused on technology, 
-          <br>across a wide variety of topics - government, finance, health, revenue, and education.
-          <br> A large number of bills also focused on crime-related topics as well as regulating tech.
-        </h3>
-        <p>Open questions: How do I make the fonts and sizes consistent across all 3 charts?
-        <br><a href="https://github.com/esiu-23/CAPP30239_FA22/blob/pages/final_project/types.csv">Chart Data</a>
-        </p>
-        <div id="chart3"></div>
+          <h3>HB 1443, a bill regulating technology, took 5 months to become law. 
+            <br>It spent 4 months in the House, 1 month in the Senate, and 3 weeks in the Executive office. 
+          </h3>
+          <p>
+            <a href="https://github.com/esiu-23/CAPP30239_FA22/blob/pages/final_project/action_counts-2.csv">Chart Data</a>
+          </p>
+          <div id="chart2"></div>
+       
+            <h3>The most 10 most common bill topics in the 102nd Illinois Congress focused on technology, 
+            <br>across a wide variety of topics - government tech, regulating technology, and law technology to name a few.
+            <br> The second most common bill topic was focused on crime. 
+          </h3>
+          <p>Open questions: How do I make the fonts and sizes consistent across all 3 charts?
+          <br><a href="https://github.com/esiu-23/CAPP30239_FA22/blob/pages/final_project/types.csv">Chart Data</a>
+          </p>
+          <div id="chart3"></div>
     </div>
 </body>
     <script src="https://d3js.org/d3.v7.js"></script> 
@@ -70,5 +49,6 @@
     <script src="actions-packed.js"></script> 
     <script src="scatterplot.js"></script> 
     <script src="ring.js"></script> 
+    <script src="beeswarm.js"></script> 
    
 </html>
