@@ -1,5 +1,5 @@
 (function beeswarm(){
-    let height = 300,
+    let height = 400,
     width = 1000,
     padding = 1.5
     margin = ({ top: 25, right: 30, bottom: 35, left: 60 });
@@ -42,24 +42,25 @@
 
     svg.selectAll('circle')
         .data(data)
-        .join('circle')
         .attr("class", "circle-swarm")
+        .join('circle')
         .attr('cx', (d) => x(d.District))
         .attr('cy', (d) => y(d.Chamber) + y.bandwidth()/2)
         .attr('r', d => (d.Years/2 + 3))
         .attr('fill', (d) => color(d.Party));
 
-    const tooltip = d3.select("body").append("div")
+    var tooltip = d3.select("chart0").append("div")
         .attr("class", "svg-tooltip")
         .style("position", "absolute")
         .style("visibility", "hidden");
     
       d3.selectAll("circle-swarm")
         .on("mouseover", function(event, d) {
-          d3.select(this).attr("fill", "red");
+          d3.select(this)
+          .attr("fill", "black");
           tooltip
             .style("visibility", "visible")
-            .style("font-size", "20px")
+            .style("font-size", "16px")
             .html(`Chamber: ${d.Chamber} <br> Years in Office: ${d.Years} <br> District: ${d.District}`);
         })
         .on("mousemove", function(event) {
@@ -68,7 +69,7 @@
             .style("left", (event.pageX + 10) + "px");
         })
         .on("mouseout", function() {
-          d3.select(this).style("fill", d => color(d.Chamber))
+          d3.select(this);
           tooltip.style("visibility", "hidden");
         })
 
@@ -77,7 +78,7 @@
   svg.append("circle").attr("cx",20).attr("cy",50).attr("r", 2).style("fill",  "#87CEEB")
   svg.append("text").attr("x", 30).attr("y", 40).text("Democrat").style("font-size", "10px").attr("alignment-baseline","middle")
   svg.append("text").attr("x", 30).attr("y", 50).text("Republican").style("font-size", "10px").attr("alignment-baseline","middle")
-  svg.append("text").attr("x", 30).attr("y", 60).text("Size indicates years in office").style("font-size", "10px").attr("alignment-baseline","middle")
+  svg.append("text").attr("x", 15).attr("y", 60).text("Size indicates years in office").style("font-size", "10px").attr("alignment-baseline","middle")
   
 //   // Add a legend title
   svg.append("text").attr("x", 10).attr("y", 20).text("Legend: ").style("font-size", "12px").attr("alignment-baseline","middle")

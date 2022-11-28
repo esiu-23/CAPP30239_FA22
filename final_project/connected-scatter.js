@@ -1,8 +1,8 @@
 (function connected(){
         
-    let height = 400,
-    width = 600,
-    margin = ({ top: 25, right: 30, bottom: 35, left: 40 });
+    let height = 500,
+    width = 1000,
+    margin = ({ top: 25, right: 30, bottom: 35, left: 80 });
       
       const svg = d3.select("#chart2")
         .append("svg")
@@ -53,20 +53,20 @@
       .selectAll("circle")
       .data(data)
       .join("circle")
-      .attr("class", "circle-scatter")
+      .attr("attr", "circle-scatter")
       .attr("cx", d => x(d.classification_y))
       .attr("cy", d => y(d.date))
       .attr("r", 2)
       .attr("opacity", 0.75);
   
-    const tooltip = d3.select("body").append("div")
+    var tooltip = d3.select("#chart2").append("div")
       .attr("class", "svg-tooltip")
       .style("position", "absolute")
       .style("visibility", "hidden");
   
     d3.selectAll("circle-scatter")
       .on("mouseover", function(event, d) {
-        d3.select(this).attr("fill", "red");
+        d3.select(this).attr("fill", "black");
         tooltip
           .style("visibility", "visible")
           .html(`${d.description}`);
@@ -77,7 +77,7 @@
           .style("left", (event.pageX + 10) + "px");
       })
       .on("mouseout", function() {
-        d3.select(this).attr("fill", "black");
+        d3.select(this);
         tooltip.style("visibility", "hidden");
       })
       
