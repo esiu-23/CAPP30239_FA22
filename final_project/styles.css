@@ -1,5 +1,9 @@
 * {
-    font: "avenir next", Arial, sans-serif;
+    font: helvetica;
+    margin-top: 20 px;
+    margin-left: 40 px;
+    margin-right: 40px;
+    margin-bottom: 20px;
   }
 
   h1 {
