@@ -75,13 +75,13 @@
   }
 
   foreignObject p {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .axis {
     font: 15px sans-serif;
     }
-    
+
   .node:hover{
       stroke-width: 2px !important;
       opacity: 1 !important;
