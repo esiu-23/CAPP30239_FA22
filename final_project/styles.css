@@ -3,20 +3,20 @@
   }
 
   h1 {
-    font-size: 30px;
+    font-size: 20px;
     color: #000000;
     font-weight: bold;
     text-align: center;
   }
 
   h3 {
-    font-size: 20px;
+    font-size: 15px;
     color: #000000;
     font-weight: bold;
   }
   
   p {
-    font-size: 14 px;
+    font-size: 12 px;
   }
 
   .container {
@@ -38,8 +38,8 @@
     border-radius: 5px;
     color: #fff;
     display: block;
-    font-size: 16px;
-    line-height: 16px;
+    font-size: 12px;
+    line-height: 12px;
     text-transform: none;
     max-width: 1000px;
     padding: 1rem;
@@ -81,12 +81,7 @@
   .axis {
     font: 15px sans-serif;
     }
-  
-  body {
-    font-family:"avenir next", Arial, sans-serif;
-    font-size: 30px;
-    color: #696969;
-  }
+    
   .node:hover{
       stroke-width: 2px !important;
       opacity: 1 !important;
