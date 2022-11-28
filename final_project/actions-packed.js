@@ -34,7 +34,7 @@
         .enter()
         .append("circle")
         .attr("class", "node")
-        .attr("r", function(d){ return size(d.Count)})
+        .attr("r", d => size(d.Count))
         .attr("cx", width / 2)
         .attr("cy", height / 2)
         .style("fill", d => color(d.Category))
@@ -42,13 +42,13 @@
         .attr("stroke", "black")
         .style("stroke-width", 1)
     
-    const labels = node
+    node
         .append('text')
-        .selectAll("tspan")
-        .attr('dy', '.3em')
-        .style('text-anchor', 'middle')
+        .attr("text-anchor", "middle")
+        .attr("dy", ".3em")
+        // .text("Node Name To Display")
         .style('font-size', 10)
-        .text(d => {return [d.Actions, d.Count];})
+        .html( d => `${d.date} <br> ${d.description}`)
         .join("tspan")
 
     // Features of the forces applied to the nodes:
@@ -65,10 +65,6 @@
             node
                 .attr("cx", d => d.x)
                 .attr("cy", d => d.y)
-                
-            labels
-                .attr('x', d => d.x)
-                .attr('y', d => d.y)
         });
 
     // Add one dot in the legend for each name.
@@ -96,6 +92,6 @@
     
     // Add a legend title
     svg.append("text").attr("x", 10).attr("y", 30).text("Legend: Bill Actions by Category").style("font-size", "9px").attr("alignment-baseline","middle")
-    svg.append("text").attr("x", width/3).attr("y", 10).text("Congressional Actions by Category").style("font-size", "12px").attr("alignment-baseline","middle")
-    })
+
+})
 })();

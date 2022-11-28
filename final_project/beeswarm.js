@@ -26,7 +26,7 @@
 
     var color = d3.scaleOrdinal()
     .domain(["Democratic, Republican"])
-    .range(d3.schemeSet2);
+    .range(["#AA4A44", "#00FFFF"]);
 
     svg.append("g")
     .attr("transform", `translate(0,${height - margin.bottom})`)

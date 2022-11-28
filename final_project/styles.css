@@ -1,7 +1,24 @@
 * {
-    font-family: 'Work Sans',Arial, Helvetica, sans-serif;
+    font: "avenir next", Arial, sans-serif;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
   }
 
+  h1 {
+    font-size: 40px;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 25px;
+    color: #000000;
+    font-weight: bold;
+  }
+  
   p {
     font-size: 1em;
   }
@@ -25,16 +42,23 @@
     border-radius: 5px;
     color: #fff;
     display: block;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 16px;
     text-transform: none;
-    max-width: 320px;
+    max-width: 1000px;
     padding: 1rem;
     position: absolute;
     text-overflow: ellipsis;
     white-space: pre;
     z-index: 300;
     visibility: hidden;
+  }
+  
+  p {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
   }
 
   .domain {

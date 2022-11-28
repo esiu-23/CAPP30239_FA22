@@ -1,6 +1,6 @@
 (function scatter(){
   let height = 600,
-    width = 1100,
+    width = 1200,
     margin = ({ top: 100, right: 30, bottom: 50, left: 50 });
   
   const svg = d3.select("#chart2")
@@ -57,7 +57,7 @@
       .enter()
       .append("circle")
         .attr("cx", d => x(d.classification) )
-        .attr("cy", d => y(d.date) )
+        .attr("cy", d => y(d.date))
         .attr("r", 5)
         .attr("fill", d => color(d.Chamber))
     
@@ -88,7 +88,7 @@
       tooltip
         .style("visibility", "visible")
         .style("font-size", "20px")
-        .html(`${d.description}`);
+        .html(`${d.date} <br> ${d.description}`);
     })
     .on("mousemove", function(event) {
       tooltip
@@ -133,7 +133,6 @@
   
   // Add a legend title
   svg.append("text").attr("x", 10).attr("y", 20).text("Legend: ").style("font-size", "12px").attr("alignment-baseline","middle")
-  svg.append("text").attr("x", width/3).attr("y", 30).text("HB 1443's Path from Introduction to Bill")
   
   });
 })();

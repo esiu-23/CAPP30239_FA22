@@ -4,9 +4,9 @@
   
     let height = 1000,
     width = 1000,
-    innerRadius = 125,
-    outerRadius = 175,
-    labelRadius = 200;
+    innerRadius = 350,
+    outerRadius = 450,
+    labelRadius = 500;
 
     console.log(data)
 
