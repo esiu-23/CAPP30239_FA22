@@ -2,7 +2,7 @@
     let height = 300,
     width = 1000,
     padding = 1.5
-    margin = ({ top: 25, right: 30, bottom: 35, left: 40 });
+    margin = ({ top: 25, right: 30, bottom: 35, left: 60 });
 
     const svg = d3.select("#chart0")
     .append("svg")
@@ -43,6 +43,7 @@
     svg.selectAll('circle')
         .data(data)
         .join('circle')
+        .attr("class", "circle-swarm")
         .attr('cx', (d) => x(d.District))
         .attr('cy', (d) => y(d.Chamber) + y.bandwidth()/2)
         .attr('r', d => (d.Years/2 + 3))
@@ -53,7 +54,7 @@
         .style("position", "absolute")
         .style("visibility", "hidden");
     
-      d3.selectAll("circle")
+      d3.selectAll("circle-swarm")
         .on("mouseover", function(event, d) {
           d3.select(this).attr("fill", "red");
           tooltip

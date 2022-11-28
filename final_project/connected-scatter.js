@@ -53,6 +53,7 @@
       .selectAll("circle")
       .data(data)
       .join("circle")
+      .attr("class", "circle-scatter")
       .attr("cx", d => x(d.classification_y))
       .attr("cy", d => y(d.date))
       .attr("r", 2)
@@ -63,7 +64,7 @@
       .style("position", "absolute")
       .style("visibility", "hidden");
   
-    d3.selectAll("circle")
+    d3.selectAll("circle-scatter")
       .on("mouseover", function(event, d) {
         d3.select(this).attr("fill", "red");
         tooltip

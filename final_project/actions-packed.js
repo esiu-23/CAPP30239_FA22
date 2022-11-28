@@ -46,9 +46,9 @@
         .append('text')
         .attr("text-anchor", "middle")
         .attr("dy", ".3em")
-        // .text("Node Name To Display")
+        // PlaceHolder text
+        .text("Node Name To Display")
         .style('font-size', 10)
-        .html( d => `${d.date} <br> ${d.description}`)
         .join("tspan")
 
     // Features of the forces applied to the nodes:
