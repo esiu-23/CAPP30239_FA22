@@ -1,12 +1,12 @@
-(function beeswarm(){
+(function ring(){
   
   d3.csv('types.csv').then((data) => {
   
     let height = 1000,
     width = 1000,
-    innerRadius = 350,
-    outerRadius = 450,
-    labelRadius = 500;
+    innerRadius = 300,
+    outerRadius = 400,
+    labelRadius = 450;
 
     console.log(data)
 

@@ -56,8 +56,8 @@
       .data(data)
       .enter()
       .append("circle")
-        .attr("cx", d => x(d.classification) )
-        .attr("cy", d => y(d.date))
+        .attr("cx", (d) => x(d.classification) )
+        .attr("cy", (d) => y(d.date) + 4)
         .attr("r", 5)
         .attr("fill", d => color(d.Chamber))
     
@@ -77,27 +77,27 @@
   }
   repeat();
 
-  const tooltip = d3.select("body").append("div")
-    .attr("class", "svg-tooltip")
+  var tooltip1 = d3.select("body").append("div")
+    .attr("class", "svg-tooltip1")
     .style("position", "absolute")
     .style("visibility", "hidden");
 
   d3.selectAll("circle")
     .on("mouseover", function(event, d) {
       d3.select(this).attr("fill", "red");
-      tooltip
+      tooltip1
         .style("visibility", "visible")
         .style("font-size", "20px")
         .html(`${d.date} <br> ${d.description}`);
     })
     .on("mousemove", function(event) {
-      tooltip
+      tooltip1
         .style("top", (event.pageY - 10) + "px")
         .style("left", (event.pageX + 10) + "px");
     })
     .on("mouseout", function() {
       d3.select(this).style("fill", d => color(d.Chamber))
-      tooltip.style("visibility", "hidden");
+      tooltip1.style("visibility", "hidden");
     })
     
   function wrap(text, width) {

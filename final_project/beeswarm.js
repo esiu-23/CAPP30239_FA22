@@ -1,5 +1,5 @@
 (function beeswarm(){
-    let height = 400,
+    let height = 300,
     width = 1000,
     padding = 1.5
     margin = ({ top: 25, right: 30, bottom: 35, left: 40 });
@@ -22,11 +22,11 @@
     
     let x = d3.scaleLinear()
     .domain(d3.extent(data, d => d.District))
-    .range([margin.left, width - margin.right]);
+    .range([margin.left, width - margin.right]).nice();
 
     var color = d3.scaleOrdinal()
     .domain(["Democratic, Republican"])
-    .range(["#AA4A44", "#00FFFF"]);
+    .range(["#AA4A44", "#87CEEB"]);
 
     svg.append("g")
     .attr("transform", `translate(0,${height - margin.bottom})`)
@@ -39,34 +39,14 @@
     .attr("class", "y-axis")
     .call(d3.axisLeft(y))
     .selectAll(".tick text")
-        
-    var simulation = d3.forceSimulation(data)
-        .force('x', d3.forceX((d) => x(d.District)).strength(2))
-        .force('y', d3.forceY((d) => y(d.Chamber)))
-        .force('collide', d3.forceCollide(d => d.Years + padding))
-        .stop();
 
     svg.selectAll('circle')
         .data(data)
         .join('circle')
         .attr('cx', (d) => x(d.District))
-        .attr('cy', (d) => y(d.Chamber))
-        .attr('r', d => (d.Years/2))
+        .attr('cy', (d) => y(d.Chamber) + y.bandwidth()/2)
+        .attr('r', d => (d.Years/2 + 3))
         .attr('fill', (d) => color(d.Party));
-
-    for(let i = 0; i<120; i++) {
-            simulation.tick();      
-
-            svg.selectAll('circle')
-            .data(data)
-            .transition()
-            .duration(1200)
-            .ease(d3.easeLinear)
-            .attr('cx', (d) => d.x)
-            .attr('cy', (d) => d.y);
-
-            return svg.node();
-        }
 
     const tooltip = d3.select("body").append("div")
         .attr("class", "svg-tooltip")
@@ -79,7 +59,7 @@
           tooltip
             .style("visibility", "visible")
             .style("font-size", "20px")
-            .html(`Chamber: ${d.Chamber}` <br> `Years: ${d.Years}` <br> `District: ${d.District}`);
+            .html(`Chamber: ${d.Chamber} <br> Years in Office: ${d.Years} <br> District: ${d.District}`);
         })
         .on("mousemove", function(event) {
           tooltip
@@ -91,24 +71,15 @@
           tooltip.style("visibility", "hidden");
         })
 
-simulation
-.on("tick", function(d){
-    node
-        .attr("cx", d => d.x)
-        .attr("cy", d => d.y)
-});
-
-//   // Add one dot in the legend for each name.
-//   svg.append("circle").attr("cx",20).attr("cy",40).attr("r", 2).style("fill", "#fc8d62" )
-//   svg.append("circle").attr("cx",20).attr("cy",50).attr("r", 2).style("fill",  "#8da0cb")
-//   svg.append("circle").attr("cx",20).attr("cy",60).attr("r", 2).style("fill", "#e78ac3")
-//   svg.append("text").attr("x", 30).attr("y", 40).text("Action in House").style("font-size", "10px").attr("alignment-baseline","middle")
-//   svg.append("text").attr("x", 30).attr("y", 50).text("Action in Senate").style("font-size", "10px").attr("alignment-baseline","middle")
-//   svg.append("text").attr("x", 30).attr("y", 60).text("Action by Executive (Governor)").style("font-size", "10px").attr("alignment-baseline","middle")
+  // Add one dot in the legend for each name.
+  svg.append("circle").attr("cx",20).attr("cy",40).attr("r", 2).style("fill", "#AA4A44")
+  svg.append("circle").attr("cx",20).attr("cy",50).attr("r", 2).style("fill",  "#87CEEB")
+  svg.append("text").attr("x", 30).attr("y", 40).text("Democrat").style("font-size", "10px").attr("alignment-baseline","middle")
+  svg.append("text").attr("x", 30).attr("y", 50).text("Republican").style("font-size", "10px").attr("alignment-baseline","middle")
+  svg.append("text").attr("x", 30).attr("y", 60).text("Size indicates years in office").style("font-size", "10px").attr("alignment-baseline","middle")
   
 //   // Add a legend title
-//   svg.append("text").attr("x", 10).attr("y", 20).text("Legend: ").style("font-size", "12px").attr("alignment-baseline","middle")
-//   svg.append("text").attr("x", width/3).attr("y", 30).text("HB 1443's Path from Introduction to Bill")
+  svg.append("text").attr("x", 10).attr("y", 20).text("Legend: ").style("font-size", "12px").attr("alignment-baseline","middle")
   
   });
 })();
