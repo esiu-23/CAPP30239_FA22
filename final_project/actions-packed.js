@@ -41,15 +41,7 @@
         .style("fill-opacity", 0.8)
         .attr("stroke", "black")
         .style("stroke-width", 1)
-    
-    node
-        .append('text')
-        .attr("text-anchor", "middle")
-        .attr("dy", ".3em")
-        // PlaceHolder text
-        .text("Node Name To Display")
-        .style('font-size', 10)
-        .join("tspan")
+        .attr("id", "circle-bubble")
 
     // Features of the forces applied to the nodes:
     var simulation = d3.forceSimulation()
@@ -67,7 +59,30 @@
                 .attr("cy", d => d.y)
         });
 
-    // Add one dot in the legend for each name.
+    var tooltip = d3.select("body").append("div")
+        .attr("class", "svg-tooltip")
+        .style("position", "absolute")
+        .style("visibility", "hidden");
+    
+      d3.selectAll("#circle-bubble")
+        .on("mouseover", function(event, d) {
+          d3.select(this).attr("fill", "black");
+          tooltip
+            .style("visibility", "visible")
+            .style("font-size", "20px")
+            .html(`${d.Actions} <br> <br> ${d.Count}`);
+        })
+        .on("mousemove", function(event) {
+          tooltip
+            .style("top", (event.pageY - 10) + "px")
+            .style("left", (event.pageX + 10) + "px");
+        })
+        .on("mouseout", function() {
+          d3.select(this).style("fill", d => color(d.Category))
+          tooltip.style("visibility", "hidden");
+        })
+    
+        // Add one dot in the legend for each name.
     svg.selectAll("mydots")
         .data(categories)
         .enter()

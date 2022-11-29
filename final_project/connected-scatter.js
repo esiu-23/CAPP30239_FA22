@@ -48,38 +48,48 @@
       .attr("class", "y-axis")
       .call(d3.axisLeft(y).tickSize(-width + margin.left + margin.right))
   
-    svg.append("g")
-      .attr("fill", "black")
-      .selectAll("circle")
-      .data(data)
-      .join("circle")
-      .attr("attr", "circle-scatter")
-      .attr("cx", d => x(d.classification_y))
-      .attr("cy", d => y(d.date))
-      .attr("r", 2)
-      .attr("opacity", 0.75);
+    // svg.append("g")
+    //   .attr("fill", "black")
+    //   .selectAll("#chart2 circle")
+    //   .data(data)
+    //   .join("circle")
+    //   .attr("attr", "circle-scatter")
+    //   .attr("cx", d => x(d.classification_y))
+    //   .attr("cy", d => y(d.date))
+    //   .attr("r", 2)
+    //   .attr("opacity", 0.75);
+    
+    // var square = d3.symbolSquare
+
+    // svg.append("g")
+    //   .data(data)
+    //   .join("path")
+    //   .attr("transform", d => `translate(${x(d.x)},${y(d.y)})`)
+    //   .attr("fill", d => color(d.Chamber))
+    //   .attr("d", square)
+    //   .attr("class", "square");
   
-    var tooltip = d3.select("#chart2").append("div")
-      .attr("class", "svg-tooltip")
-      .style("position", "absolute")
-      .style("visibility", "hidden");
+    // var tooltip = d3.select("#chart2").append("div")
+    //   .attr("class", "svg-tooltip")
+    //   .style("position", "absolute")
+    //   .style("visibility", "hidden");
   
-    d3.selectAll("circle-scatter")
-      .on("mouseover", function(event, d) {
-        d3.select(this).attr("fill", "black");
-        tooltip
-          .style("visibility", "visible")
-          .html(`${d.description}`);
-      })
-      .on("mousemove", function(event) {
-        tooltip
-          .style("top", (event.pageY - 10) + "px")
-          .style("left", (event.pageX + 10) + "px");
-      })
-      .on("mouseout", function() {
-        d3.select(this);
-        tooltip.style("visibility", "hidden");
-      })
+    // d3.selectAll(".square")
+    //   .on("mouseover", function(event, d) {
+    //     d3.select(this).attr("fill", "black");
+    //     tooltip
+    //       .style("visibility", "visible")
+    //       .html(`${d.description}`);
+    //   })
+    //   .on("mousemove", function(event) {
+    //     tooltip
+    //       .style("top", (event.pageY - 10) + "px")
+    //       .style("left", (event.pageX + 10) + "px");
+    //   })
+    //   .on("mouseout", function() {
+    //     d3.select(this);
+    //     tooltip.style("visibility", "hidden");
+    //   })
       
   });
 

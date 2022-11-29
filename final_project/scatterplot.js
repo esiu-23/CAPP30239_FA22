@@ -60,6 +60,7 @@
         .attr("cy", (d) => y(d.date) + 4)
         .attr("r", 5)
         .attr("fill", d => color(d.Chamber))
+        .attr("id", "circle-scatter")
     
   // Get the length of the path, which we will use for the intial offset to "hide"
   // the graph
@@ -77,27 +78,27 @@
   }
   repeat();
 
-  var tooltip1 = d3.select("body").append("div")
-    .attr("class", "svg-tooltip1")
+  var tooltip = d3.select("body").append("div")
+    .attr("class", "svg-tooltip")
     .style("position", "absolute")
     .style("visibility", "hidden");
 
-  d3.selectAll("circle")
+  d3.selectAll("#circle-scatter")
     .on("mouseover", function(event, d) {
-      d3.select(this).attr("fill", "red");
-      tooltip1
+      d3.select(this).attr("fill", "black");
+      tooltip
         .style("visibility", "visible")
         .style("font-size", "20px")
-        .html(`${d.date} <br> ${d.description}`);
+        .html(`${d.date} <br> <br> ${d.description}`);
     })
     .on("mousemove", function(event) {
-      tooltip1
+      tooltip
         .style("top", (event.pageY - 10) + "px")
         .style("left", (event.pageX + 10) + "px");
     })
     .on("mouseout", function() {
       d3.select(this).style("fill", d => color(d.Chamber))
-      tooltip1.style("visibility", "hidden");
+      tooltip.style("visibility", "hidden");
     })
     
   function wrap(text, width) {
