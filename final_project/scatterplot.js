@@ -22,7 +22,17 @@
 
   let x = d3.scaleBand()
   .domain(data.map(d => d.classification))
-  .range([margin.left, width - margin.right]);
+  .range([margin.left, width - margin.right])
+  
+  // xGrid = (g) => g
+  // .attr('class', 'grid-lines')
+  // .selectAll('line')
+  // .data(x.ticks())
+  // .join('line')
+  // .attr('x1', d => x(d))
+  // .attr('x2', d => x(d))
+  // .attr('y1', margin.top)
+  // .attr('y2', height - margin.bottom)
 
   var color = d3.scaleOrdinal()
   .domain(["House, Senate, Executive"])
@@ -34,6 +44,8 @@
     .call(d3.axisBottom(x))
     .selectAll(".tick text")
     .call(wrap, x.bandwidth())
+  
+  // svg.append("g").call(xGrid)
 
   svg.append("g")
     .attr("transform", `translate(${margin.left},0)`)
