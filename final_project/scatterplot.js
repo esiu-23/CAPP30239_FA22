@@ -41,11 +41,9 @@
   svg.append("g")
     .attr("transform", `translate(0,${height - margin.bottom})`)
     .attr("class", "x-axis")
-    .call(d3.axisBottom(x))
+    .call(d3.axisBottom(x).tickSize(-height + margin.top + margin.bottom))
     .selectAll(".tick text")
     .call(wrap, x.bandwidth())
-  
-  // svg.append("g").call(xGrid)
 
   svg.append("g")
     .attr("transform", `translate(${margin.left},0)`)
