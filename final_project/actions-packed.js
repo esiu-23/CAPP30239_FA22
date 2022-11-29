@@ -99,7 +99,7 @@
         .append("text")
         .attr("x", 15)
         .attr("y", function(d,i){ return 40 + i*8}) // 100 is where the first dot appears. 25 is the distance between dots
-        .style("fill", d => color(d))
+        .style("fill", "black")
         .style("font-size", 6)
         .text(d => d)
         .attr("text-anchor", "left")

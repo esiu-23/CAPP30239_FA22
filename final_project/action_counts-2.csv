@@ -1,22 +1,22 @@
 Actions,Category,Count
-referral-committee,Referral,35916
-filing,Filing,12838
-reading-1,Reading,12500
-reading-2,Reading,7479
-committee-passage,Passage,5357
-amendment-introduction,Amendment,2896
-passage, reading-3,Passage,2665
-passage,Passage,2214
-introduction,Introduction,1838
-amendment-passage,Amendment,1710
-reading-3,Reading,1421
-executive-receipt,Referral,1106
-became-law,Passage,1102
-executive-signature,Passage,1096
-committee-passage-favorable,Passage,1057
-amendment-failure,Amendment,382
-committee-failure,Failure,30
-executive-veto,Failure,8
-withdrawal,Failure,3
-failure, reading-3,Failure,2
-veto-override-passage,Failure,1
+Committee Referral,Referral,35916
+Filing,Filing,12838
+Reading-1,Reading,12500
+Reading-2,Reading,7479
+Committee Passage,Passage,5357
+Amendment Introduction,Amendment,2896
+Passage, Reading-3,Passage,2665
+Passage,Passage,2214
+Introduction,Introduction,1838
+Amendment Passage,Amendment,1710
+Reading-3,Reading,1421
+Executive Receipt,Referral,1106
+Became Law,Passage,1102
+Executive Signature,Passage,1096
+Committee Passage-favorable,Passage,1057
+Amendment Failure,Amendment,382
+Committee Failure,Failure,30
+Executive Veto,Failure,8
+Withdrawal,Failure,3
+Failure, reading-3,Failure,2
+Veto override - Passage,Failure,1
