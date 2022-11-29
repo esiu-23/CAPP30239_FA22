@@ -16,11 +16,12 @@
         }
         console.log(data)
 
-    var categories = ["Referral", "Passage", "Filing", "Introduction", "Amendment", "Failure"]
- 
+    var categories = ["Referral", "Reading", "Passage", "Filing", "Introduction", "Amendment", "Failure"]
+    var color_range = ["#ffd92f", "#66c2a5", "#a6d654", "#e5c494", "#b3b3b3", "#8da0cb", "#Fc8d62"]
+
     var color = d3.scaleOrdinal()
         .domain(categories)
-        .range(d3.schemeSet2);
+        .range(color_range);
 
     // Size scale for categories
     var size = d3.scaleLinear()

@@ -46,8 +46,8 @@
       .attr("stroke", "#808080")
       .attr("stroke-width", 1.5)
       .attr("d", d3.line()
-        .x( d=> x(d.classification))
-        .y( d => y(d.date))
+        .x( d=> x(d.classification) + x.bandwidth()/2)
+        .y( d => y(d.date) + 1.5)
         )
     // Add the points
   svg
@@ -56,8 +56,8 @@
       .data(data)
       .enter()
       .append("circle")
-        .attr("cx", (d) => x(d.classification) )
-        .attr("cy", (d) => y(d.date) + 4)
+        .attr("cx", (d) => x(d.classification) + x.bandwidth()/2)
+        .attr("cy", (d) => y(d.date))
         .attr("r", 5)
         .attr("fill", d => color(d.Chamber))
         .attr("id", "circle-scatter")
