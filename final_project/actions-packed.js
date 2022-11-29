@@ -1,8 +1,8 @@
 
 // set the dimensions and margins of the graph
 (function bubbles(){
-    let height = 800,
-    width = 800,
+    let height = 600,
+    width = 600,
     margin = ({ top: 25, right: 30, bottom: 35, left: 40 });
 
     const svg = d3.select("#chart")
