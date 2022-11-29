@@ -69,7 +69,7 @@
 		  .data(data)
 		  .attr("id", "circle-swarm")
 		  .transition()
-		  .duration(120)
+		  .duration(12)
 		  .ease(d3.easeLinear)
 		  .attr('cx', (d) => d.x)
 		  .attr('cy', (d) => d.y);
@@ -87,9 +87,9 @@
 		tooltip
 		  .style("visibility", "visible")
 		  .style("font-size", "20px")
-		  .html(`${d.Name}, ${d.Party} 
-			  <br> District: ${d.District} 
-			  <br> ${d.Years} years in office`);
+		  .html(`${d.Name}, ${d.Party} Party
+			  <br>District: ${d.District} 
+			  <br>${d.Years} years in office`);
 	  })
 	  .on("mousemove", function(event) {
 		tooltip
