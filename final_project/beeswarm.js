@@ -32,7 +32,7 @@
 	.attr("transform", `translate(0,${height - margin.bottom})`)
 	.attr("class", "x-axis")
 	.call(d3.axisBottom(x))
-	.selectAll(".tick text")
+	.selectAll(".tick text").remove()
 
 	svg.append("g")
 	.attr("transform", `translate(${margin.left},0)`)
@@ -40,12 +40,12 @@
 	.call(d3.axisLeft(y))
 	.selectAll(".tick text")
 
-	svg.append("text")
-    .attr("class", "x label")
-    .attr("text-anchor", "end")
-    .attr("x", margin.left + 3)
-    .attr("y", height)
-    .text("District");
+	// svg.append("text")
+    // .attr("class", "x label")
+    // .attr("text-anchor", "end")
+    // .attr("x", margin.left + 3)
+    // .attr("y", height)
+    // .text("District");
 
 	svg.selectAll('circle')
 		.data(data)
