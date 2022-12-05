@@ -1,6 +1,6 @@
 	(function beeswarm(){
 	let height = 400,
-	width = 1000,
+	width = 800,
 	padding = 1.5
 	margin = ({ top: 25, right: 30, bottom: 35, left: 60 });
 

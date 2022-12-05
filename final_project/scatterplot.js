@@ -1,6 +1,6 @@
 (function scatter(){
   let height = 600,
-    width = 1200,
+    width = 1000,
     margin = ({ top: 100, right: 30, bottom: 50, left: 80 });
   
   const svg = d3.select("#chart2")
