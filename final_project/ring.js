@@ -2,8 +2,8 @@
   
   d3.csv('types.csv').then((data) => {
   
-    let height = 800,
-    width = 800,
+    let height = 1200,
+    width = 1200,
     innerRadius = 300,
     outerRadius = 400,
     labelRadius = 450;
