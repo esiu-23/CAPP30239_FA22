@@ -4,11 +4,6 @@
     font-family: Arial, sans-serif;
     background-color: #fff;
   }
- 
-  .div{
-    align-items: center;
-    padding: 1.5;
-  }
 
   h1 {
     background-color: #333;
@@ -18,7 +13,9 @@
   }
 
   h2 {
+    background-color: "light-gray";
     font-size: 15px;
+    padding: 10px;
     color: #000000;
     font-weight: bold;
     text-align: center;
@@ -31,8 +28,8 @@
   }
 
   h3 {
+    color:"black";
     font-size: 15px;
-    color: #000000;
     font-weight: bold;
   }
   

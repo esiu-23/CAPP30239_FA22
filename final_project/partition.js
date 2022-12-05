@@ -1,12 +1,10 @@
 // Treemap
-
 let height = 500,
   width = 800;
 
 const svg = d3.select("#chart")
   .append("svg")
   .attr("viewBox", [0, 0, width, height]);
-
 
 d3.json('actions-hierarchy.json').then(data => { 
     const treemap = data => d3.treemap()
