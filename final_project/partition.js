@@ -1,7 +1,7 @@
 // Treemap
 
-let height = 600,
-  width = 900;
+let height = 500,
+  width = 800;
 
 const svg = d3.select("#chart")
   .append("svg")
@@ -48,18 +48,43 @@ d3.json('actions-hierarchy.json').then(data => {
       gNode.append("text")
         .append("tspan")
         .attr("x", 3)
-        .attr("y", "1.1em")
+        .attr("y", "1em")
         .attr("font-weight", "bold")
         .text(d => d.data.name)
         .append("tspan")
         .attr("x", 3)
-        .attr("y", "2.3em")
+        .attr("y", "2.1em")
+        .attr("font-weight", "normal")
+        .text(d => d.data.subtext)
+        .append("tspan")
+        .attr("x", 3)
+        .attr("y", "3.2em")
         .attr("font-weight", "normal")
         .text(d => format(d.value));
   
       group.call(position);
     }
-  
+
+    svg.selectAll('text')
+    .selectAll('tspan')
+    .data(d => {
+        return d.data.name.split(/\s+/)// split the name of movie
+            .map(v => {
+                return {
+                    text: v,
+                    x0: d.x0,                        // keep x0 reference
+                    y0: d.y0                         // keep y0 reference
+                }
+            });
+    })
+    .enter()
+    .append('tspan')
+    .attr("x", (d) => d.x0 + 5)
+    .attr("y", (d, i) => d.y0 + 15 + (i * 10))       // offset by index 
+    .text((d) => d.text)
+    .attr("font-size", "0.6em")
+    .attr("fill", "white");
+
     function position(group) {
       group.selectAll("g")
         .attr("transform", d => `translate(${x(d.x0)},${y(d.y0)})`)

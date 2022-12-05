@@ -32,7 +32,7 @@
 	.attr("transform", `translate(0,${height - margin.bottom})`)
 	.attr("class", "x-axis")
 	.call(d3.axisBottom(x))
-	.selectAll(".tick text").remove()
+	.selectAll(".tick").remove()
 
 	svg.append("g")
 	.attr("transform", `translate(${margin.left},0)`)

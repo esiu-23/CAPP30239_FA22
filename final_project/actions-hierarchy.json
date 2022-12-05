@@ -4,10 +4,17 @@
         {
             "name": "Introductions",
             "children": [
-                {"name": "Bill Introduction", "value": 1838, "color":"#a6cee3" , "opacity": 0.25},
-                {"name": "Amendment Introduction", "value": 2665, "color":"#a6cee3" , "opacity": 0.25},
-                {"name": "Filing", "value": 12838, "color":"#a6cee3" , "opacity": 0.25}
+                {"name": "Bill Introduction", 
+                    "subtext": "Introducing a new bill to the floor",
+                    "value": 1838, "color":"#a6cee3" , "opacity": 0.25},
+                {"name": "Amendment Introduction",
+                    "subtext": "Adding an amendment to an existing bill", 
+                    "value": 2665, "color":"#a6cee3" , "opacity": 0.25},
+                {"name": "Filing", 
+                    "subtext": "Administrative actions related to introducing a new bill or amendment",
+                    "value": 12838, "color":"#a6cee3" , "opacity": 0.25}
             ],
+            "subtext": "Introducing new bills & amendments",
             "color":"#a6cee3" , 
             "opacity": 0.25
         },
@@ -15,45 +22,74 @@
         {
             "name": "Readings",
             "children": [
-                {"name": "Reading-1", "value": 12500, "color":"#b2df8a" , "opacity": 0.25},
-                {"name": "Reading-2", "value": 7479, "color":"#b2df8a" , "opacity": 0.25},
-                {"name": "Reading-3", "value": 1421, "color":"#b2df8a" , "opacity": 0.25}
+                {"name": "Reading-1", 
+                    "subtext": "The first reading of a bill is by title only",
+                    "value": 12500, "color":"#fdbf6f" , "opacity": 0.25},
+                {"name": "Reading-2", 
+                    "subtext": "The second reading of a bill occurs when it is referred to a Commmittee, and it is read in full, along with any amendments",
+                    "value": 7479, "color":"#fdbf6f" , "opacity": 0.25},
+                {"name": "Reading-3", 
+                    "subtext": "The third reading of a bill occurs when the legislature is ready to vote on passage of the bill or amendment. Only the bill title is read.",
+                    "value": 1421, "color":"#fdbf6f"  , "opacity": 0.25}
             ],
-            "color":"#b2df8a" ,
+            "subtext": "Readings of the bill or amendment on the House or Senate floor",
+            "color":"#fdbf6f",
             "opacity": 0.25
         },
 
         {"name": "Referrals",
         "children": [
-            {"name": "Committee Referral", "value": 12500, "color":"#1f78b4" , "opacity": 0.25},
-            {"name": "Executive Receipt", "value": 1106, "color":"#1f78b4" , "opacity": 0.25}
+            {"name": "Committee Referral", 
+                "subtext": "The Hosue & Senate each have committeees that specialize in a specific subject-matter. Every bill or amendment that is discussed has to be referred to its subject-matter committee for consideration.",
+                "value": 12500, "color":"#1f78b4" , "opacity": 0.25},
+            {"name": "Executive Receipt", 
+                "subtext": "Bills that are ready for executive signature have to be referred to the governor for review.",
+                "value": 1106, "color":"#1f78b4" , "opacity": 0.25}
         ],
+        "subtext": "Referral of the bill to different committees or the exec. branch.",
         "color":"#1f78b4" , 
         "opacity": 0.25
         },
         
         {"name": "Passages",
         "children": [
-            {"name": "Committee Passage", "value": 6414, "color":"#fb9a99" , "opacity": 0.25},
-            {"name": "Reading-3 Passage", "value": 1421, "color":"#fb9a99" , "opacity": 0.25},
-            {"name": "Amendment Passage", "value": 1710, "color":"#fb9a99" , "opacity": 0.25},
-            {"name": "Executive Signature", "value": 1096, "color":"#fb9a99" , "opacity": 0.25},
-            {"name": "Became Law", "value": 1102, "color":"#fb9a99" , "opacity": 0.25},
-            {"name": "Veto Override-Passage", "value": 1, "color":"#fb9a99" , "opacity": 0.25}
+            {"name": "Committee Passage", 
+                "subtext": "Specialized subject-matter committee votes to move the bill or amendment forward.",
+                "value": 6414, "color":"#b2df8a" , "opacity": 0.25},
+            {"name": "Reading-3 Passage", 
+                "subtext": "The bill moves on after its third-reading",
+                "value": 1421, "color":"#b2df8a" , "opacity": 0.25},
+            {"name": "Amendment Passage", 
+                "subtext": "The amendment is successfully added to a bill.",
+                "value": 1710, "color":"#b2df8a" , "opacity": 0.25},
+            {"name": "Executive Signature", 
+                "subtext": "The bill is signed by the governor.",
+                "value": 1096, "color":"#b2df8a" , "opacity": 0.25},
+            {"name": "Became Law", 
+                "subtext": "The bill has become law.",
+                "value": 1102, "color":"#b2df8a" , "opacity": 0.25},
+            {"name": "Veto Override-Passage", 
+                "subtext": "The legislature overrode the governor's veto to make the bill into law.",
+                "value": 1, "color":"#b2df8a" , "opacity": 0.25}
         ],
-        "color":"#fb9a99" , 
+        "subtext": "Successful passage of an amendment or bill.",
+        "color":"#b2df8a", 
         "opacity": 0.25
         },
 
         {"name": "Vetos and Failures",
         "children": [ 
-            {"name": "Committee Failure", "value": 30, "color":"#ffff99" , "opacity": 0.25},
-            {"name": "Reading-3 Failure", "value": 2,  "color":"#ffff99" , "opacity": 0.25},
-            {"name": "Amendment Failure", "value": 382,  "color":"#ffff99" , "opacity": 0.25},
-            {"name": "Withdrawal", "value": 3,  "color":"#ffff99" , "opacity": 0.25},
-            {"name": "Executive Veto", "value": 8,  "color":"#ffff99" , "opacity": 0.25}
+            {"name": "Committee Failure", 
+                "subtext":  "Bill failed to move out of Committee.",
+                "value": 30, "color":"#fb9a99" , "opacity": 0.25},
+            {"name": "Reading-3 Failure", "value": 2,  "color":"#fb9a99" , "opacity": 0.25},
+            {"name": "Amendment Failure", 
+                "subtext":  "Amendment failed to be added to bill.",
+                "value": 382,  "color":"#fb9a99" , "opacity": 0.25},
+            {"name": "Withdrawal", "value": 3,  "color":"#fb9a99" , "opacity": 0.25},
+            {"name": "Executive Veto", "value": 8,  "color":"#fb9a99" , "opacity": 0.25}
         ],
-        "color":"#ffff99" , 
+        "color":"#fb9a99", 
         "opacity": 0.25
         }
     ]
