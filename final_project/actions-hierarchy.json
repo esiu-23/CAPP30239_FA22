@@ -1,0 +1,60 @@
+{
+    "name": "Bill Actions",
+    "children": [
+        {
+            "name": "Introductions",
+            "children": [
+                {"name": "Bill Introduction", "value": 1838, "color":"#a6cee3" , "opacity": 0.25},
+                {"name": "Amendment Introduction", "value": 2665, "color":"#a6cee3" , "opacity": 0.25},
+                {"name": "Filing", "value": 12838, "color":"#a6cee3" , "opacity": 0.25}
+            ],
+            "color":"#a6cee3" , 
+            "opacity": 0.25
+        },
+
+        {
+            "name": "Readings",
+            "children": [
+                {"name": "Reading-1", "value": 12500, "color":"#b2df8a" , "opacity": 0.25},
+                {"name": "Reading-2", "value": 7479, "color":"#b2df8a" , "opacity": 0.25},
+                {"name": "Reading-3", "value": 1421, "color":"#b2df8a" , "opacity": 0.25}
+            ],
+            "color":"#b2df8a" ,
+            "opacity": 0.25
+        },
+
+        {"name": "Referrals",
+        "children": [
+            {"name": "Committee Referral", "value": 12500, "color":"#1f78b4" , "opacity": 0.25},
+            {"name": "Executive Receipt", "value": 1106, "color":"#1f78b4" , "opacity": 0.25}
+        ],
+        "color":"#1f78b4" , 
+        "opacity": 0.25
+        },
+        
+        {"name": "Passages",
+        "children": [
+            {"name": "Committee Passage", "value": 6414, "color":"#fb9a99" , "opacity": 0.25},
+            {"name": "Reading-3 Passage", "value": 1421, "color":"#fb9a99" , "opacity": 0.25},
+            {"name": "Amendment Passage", "value": 1710, "color":"#fb9a99" , "opacity": 0.25},
+            {"name": "Executive Signature", "value": 1096, "color":"#fb9a99" , "opacity": 0.25},
+            {"name": "Became Law", "value": 1102, "color":"#fb9a99" , "opacity": 0.25},
+            {"name": "Veto Override-Passage", "value": 1, "color":"#fb9a99" , "opacity": 0.25}
+        ],
+        "color":"#fb9a99" , 
+        "opacity": 0.25
+        },
+
+        {"name": "Vetos and Failures",
+        "children": [ 
+            {"name": "Committee Failure", "value": 30, "color":"#ffff99" , "opacity": 0.25},
+            {"name": "Reading-3 Failure", "value": 2,  "color":"#ffff99" , "opacity": 0.25},
+            {"name": "Amendment Failure", "value": 382,  "color":"#ffff99" , "opacity": 0.25},
+            {"name": "Withdrawal", "value": 3,  "color":"#ffff99" , "opacity": 0.25},
+            {"name": "Executive Veto", "value": 8,  "color":"#ffff99" , "opacity": 0.25}
+        ],
+        "color":"#ffff99" , 
+        "opacity": 0.25
+        }
+    ]
+}

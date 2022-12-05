@@ -16,7 +16,11 @@
 		<br>
 		<h2>Congressional Actions by Taken During the 102nd Illinois Congress</h2>
 		<h2><a href="https://github.com/esiu-23/CAPP30239_FA22/blob/pages/final_project/action_counts-2.csv">Chart Data</a></h2>
-		<div id="chart"></div>
+		<p>Viewing level: <span id="breadcrumbs"></span></p>
+		<div id="chart">
+			<svg width="600" height="600" viewbox="-400 -400 600 600"></svg>
+		</div>
+			
 
 		<h3>When the House & Senate are in session, their main duties are to develop, discuss, and pass state legislation. </h3>
 		<p>To become a bill, a bill must first be introduced and filed with the chamber clerk. A bill can be introduced in either the Senate or the House, but ultimately must be passed in both chambers before it is passed to the governor for review. After a bill is introduced, it is referred to a committee, which is a smaller group of legislators that focus on a specific topic. For example, there are committees that focus on consumer protection, social services, and the energy and environment. Here is a full list of all of <a href="https://www.ilga.gov/house/committees/default.asp"> Illinois’ state committees</a>. After the committee votes to continue with the bill (most of the time, bills will not make it through the committee process), the chamber will debate the bill, propose possible amendments, and then ultimately vote on whether to pass the bill or not. If the chamber votes to pass the bill, the bill will then get passed to the other chamber (House or Senate), where the same process will happen all over again. Finally, if a bill makes it through both chambers, it will get passed to the governor for review & signing. To pass, a bill needs 60 votes in the House and 30 votes in the Senate.If the General Assembly chooses to override a veto by the Governor, a higher threshold of votes is needed. If the governor signs the bill, the bill finally becomes law!  If the governor vetoes the bill, the legislative branch can choose to override the veto with 71 votes in the House and 36 votes in the Senate. This happened once during the 102nd Illinois Congress. </p>
@@ -54,9 +58,11 @@
 </body>
     <script src="https://d3js.org/d3.v7.js"></script> 
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-    <script src="actions-packed.js"></script> 
-    <script src="scatterplot.js"></script> 
+	<script src="https://unpkg.com/d3-v6-tip@1.0.6/build/d3-v6-tip.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bumbeishvili/d3-tip-for-v6@4/d3-tip.min.css">
+    <!-- <script src="actions-packed.js"></script>  -->
+    <script src="partition.js"></script> 
+	<script src="scatterplot.js"></script> 
     <script src="ring.js"></script>
     <script src="beeswarm.js"></script> 
    
-</html>
