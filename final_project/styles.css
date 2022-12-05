@@ -1,15 +1,15 @@
   body {
-    margin-left: 100px;
+    margin-left: 80px;
     margin-right: 50px;
-    padding: 3;
     font-family: Arial, sans-serif;
     background-color: #fff;
   }
  
   .div{
-    align-items: center
+    align-items: center;
+    padding: 1.5;
   }
-  
+
   h1 {
     background-color: #333;
     color: #fff;
@@ -23,10 +23,14 @@
     font-weight: bold;
     text-align: center;
   }
+  h4 {
+    font-size: 15px;
+    font-weight: normal;
+    color: #000000;
+    text-align: center;
+  }
 
   h3 {
-    margin-left: 50px;
-    margin-right: 50px;
     font-size: 15px;
     color: #000000;
     font-weight: bold;
@@ -35,12 +39,10 @@
   p {
     font-size: 13.5px;
     color:gray;
-    margin-left: 50px;
-    margin-right: 80px;
   }
 
   .container {
-    width: 1800px;
+    width: 1000px;
     margin: 0 auto;
   }
 
