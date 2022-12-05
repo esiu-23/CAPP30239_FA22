@@ -1,6 +1,7 @@
   body {
-    margin: 0;
-    padding: 0;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 3;
     font-family: Arial, sans-serif;
     background-color: #fff;
   }
@@ -35,7 +36,7 @@
   }
 
   .container {
-    width: 2000px;
+    width: 1800px;
     margin: 0 auto;
   }
 
