@@ -18,11 +18,15 @@ d3.json('actions-hierarchy.json').then(data => {
     const y = d3.scaleLinear().rangeRound([0, height]);
   
     const format = d3.format(",d");
+    let c = {...data.children[0].children[0]};
+    c.value = 0;
+    data.children[0].children[0].children = [c];
   
     let group = svg.append("g")
       .call(render, treemap(data));
   
     function render(group, node) {
+      console.log("render", group, node)
       d3.select('#breadcrumbs')
         .text(node.ancestors().reverse().map(d => d.data.name).join(" > "))
         .on('click', () => {
@@ -43,24 +47,37 @@ d3.json('actions-hierarchy.json').then(data => {
       gNode.append("rect")
         .attr("fill", d => d.data.color)
         .attr("fill-opacity", d => d.data.opacity)
-        .attr("stroke", "#fff");
-  
+        .attr("stroke", "#fff")
+        .on("mousemove", function (event, d) {
+          tooltip
+            .style("visibility", "visible")
+            .html(`${d.data.name}<br />${d.data.subtext}<br />${format(d.value)}`)
+            .style("top", (event.pageY + 20) + "px")
+            .style("left", (event.pageX - 80) + "px");
+        })
+        .on("mouseout", function () {
+          tooltip.style("visibility", "hidden");
+        })
+      
       gNode.append("text")
         .append("tspan")
         .attr("x", 3)
         .attr("y", "1em")
         .attr("font-weight", "bold")
-        .text(d => d.data.name)
+        .attr("font-size",8)
+        .text(d => (d.value > 29) ? d.data.name : "")
         .append("tspan")
         .attr("x", 3)
         .attr("y", "2.1em")
         .attr("font-weight", "normal")
-        .text(d => d.data.subtext)
+        .attr("font-size",8)
+        .text(d => (d.value > 50) ? d.data.subtext : "")
         .append("tspan")
         .attr("x", 3)
         .attr("y", "3.2em")
         .attr("font-weight", "normal")
-        .text(d => format(d.value));
+        .attr("font-size",8)
+        .text(d => (d.value > 0) ? format(d.value) : "");
   
       group.call(position);
     }
@@ -132,3 +149,9 @@ d3.json('actions-hierarchy.json').then(data => {
           .call(position, d.parent));
     }
   });
+
+  const tooltip = d3.select("body")
+    .append("div")
+    .attr("class", "svg-tooltip")
+    .style("position", "absolute")
+    .style("visibility", "hidden");
