@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <h1>What happened during the 102nd session of the Illinois Congress?</h1>
+
+		<h3> When the House & Senate are in session, their main duties are to develop, discuss, and pass state legislation.</h3> 
+		<p> A bill can be introduced in either the Senate or the House, but ultimately must be passed in both chambers before it is passed to the governor for review. After a bill is introduced, it is referred to a committee, which is a smaller group of legislators that focus on a specific topic. For example, there are committees that focus on consumer protection, social services, and the energy and environment. Here is a full list of all of <a href="https://www.ilga.gov/house/committees/default.asp"> Illinois’ state committees</a>. After the committee votes to continue with the bill (most of the time, bills will not make it through the committee process), the chamber will debate the bill, propose possible amendments, and then ultimately vote on whether to pass the bill or not. If the chamber votes to pass the bill, the bill will then get passed to the other chamber (House or Senate), where the same process will happen all over again. Finally, if a bill makes it through both chambers, it will get passed to the governor for review & signing. To pass, a bill needs 60 votes in the House and 30 votes in the Senate.If the General Assembly chooses to override a veto by the Governor, a higher threshold of votes is needed. If the governor signs the bill, the bill finally becomes law!  If the governor vetoes the bill, the legislative branch can choose to override the veto with 71 votes in the House and 36 votes in the Senate. This happened once during the 102nd Illinois Congress. </p>
+		<h3> During the 102nd session of the Illinois Congress, 1,838 bills were introduced. Of those, 1,102 became law.</h3>
+		<p> The most common action taken during the 102nd Illinois congress was referring bills to committee. One bill can be referred to committee multiple times. In total, 35,916 referrals occurred, which averages to about 19 referrals per bill. The next most common actions are readings, where the bill is read on the floor. There are first, second, and third readings. The most common reading by far is the first reading, which occurred 12,500 times. Second and third readings only occurred a combined 10,144 times.</p>
+	
+		<h2>Congressional Actions by Taken During the 102nd Illinois Congress</h2>
+		<h4>Explore: To delve deeper into each action type, click on the actions. To go back up one level, click the text at the upper left of the chart. 
+			<br> Hover over each cell for full details.</h4>
+		<h2><a href="https://github.com/esiu-23/CAPP30239_FA22/blob/pages/final_project/actions-hierarchy.json">Chart Data</a></h2>
+		<p>Viewing level: <span id="breadcrumbs"></span></p>
+		<div id="chart"></div>
+	
+		<h3>The process from bill introduction to finally becoming law is complicated and can take a long time.</h3>
+		<p>The chart below tracks the life cycle of one particular bill introduced and passed in the 102nd session of Illinois Congress. This bill, HB 1443, started as amending the Illinois Banking Act. Two amendments added in the House added clauses relating to the regulation of medical cannabis. Read the bill in full <a href="https://www.ilga.gov/legislation/BillStatus.asp?DocNum=1443&GAID=16&DocTypeID=HB&SessionID=110&GA=102"> here.</a></p>  
+		<br>
+		<h2>HB 1443's Path from Introduction to Law</h2>
+		<h4>Explore: Hover over each step of the bill's process to learn more about what happened.</h4>
+		<h2><a href="https://github.com/esiu-23/CAPP30239_FA22/blob/pages/final_project/hb_1443.csv">Chart Data</a></h2>
+		<div id="chart2"></div>
+		
+		<h3>The 10 most common bill topics in the 102nd Illinois Congress focused on technology </h3>
+		<p>The counts used for this chart are pulled from the bill titles. The most number of bill titles contained the phrase “government-technology”, which suggests a focus on either implementing or using technology in government. The next most common bill topics focused on regulating technology, and then on using it in legal and education settings. The first non-tech related bill topic is crime, which showed up in 379 bills, and then revenue and budget related bills. Finally, the 9th and 10th most common bill topics were still focused on technology, but in the healthcare and transportation sectors. The focus of most of these bills focused on public service areas (providing funding and regulation for services), whereas the revenue and budget bills focused on public service processes. </p>
+		<br>
+		<h2> Top 10 bill topics of the 102nd Illinois Congress</h2>
+		<h2><a href="https://github.com/esiu-23/CAPP30239_FA22/blob/pages/final_project/types.csv">Chart Data</a></h2>
+        <div id="chart3"></div>
+
+		<h3>In the 102nd Illinois Congress, the Democrats held the House, Senate, and Governorship.</h3>
+		<p>In the House, the Democrats held a majority of 73 to 45 (D to R), and in the Senate, the Democrats held a majority of 41 to 18 (D to R). The Democrats also held the governorship, giving them the state government trifecta (when one party holds both legislative chambers and the executive branch). Elections are critical because they decide who is going to be making legislative decisions, which subsequently affect what types of bills are and are not passed. According to the ACLU, the Illinois General Assembly (House & Senate) meets each year from January to May. They then reconvene for two weeks in the Fall to consider the Governor’s vetoes. Special sessions outside of this time frame may be called by the Governor or a joint proclamation by the presiding officers of both chambers. </p>
+		<br>
+		<h2>Members of the 102nd Illinois Congress</h2>
+		<h4>Explore: Hover over each bubble to learn more about each representative, their district served, tenure, and party.</h4>
+		<h2><a href="https://github.com/esiu-23/CAPP30239_FA22/blob/pages/final_project/StateHouse.csv">Chart Data</a></h2>
+		<div id="chart0"></div>
+
+		<h3>Chart Development Process: </h3>
+		<p>The most difficult part of developing these charts was figuring out what story I wanted to tell, and which chart types could tell that story most effectively. Originally, I wanted to focus specifically on the passage of climate-change related bills by mapping out the timeline of when each bill was created and passed. However, I realized while making those charts that the story that data told was not very interesting. It also would not be clear what to make of the data without lots of additional context (ie, what global or national events were also taking place at the same time the bill was introduced or passed). So, I decided to expand my story to what the Illinois legislature was even working on in the first place. I knew there was a lot of data available for this, but that the data was difficult to interpret, making it a great candidate for data visualization, because this would be a story where visuals could tell a stronger story than words or numbers.</p>
+		<p> Finding the data was not hard, since I knew that the data was all open source. However, it was time-consuming to explore the data, and merge the appropriate dataframes together. I did all of my data exploration, manipulation, and cleaning in Pandas. After I figured out what patterns in the data I wanted to highlight with my visualization, it was fairly straightforward to create a simple table with only the numbers I wanted to show, and export it to CSV.</p>
+		<p>I ended up creating 4 charts. My first chart most directly answered the question, “what happened during the 102nd Illinois Congress?”, by summarizing all of the actions that occurred. Most people are not familiar with what the Congress does, so I used a hierarchical treemap. The highest level of the treemap provides an aggregate view of the actions. The subtext on the treemap provides additional context for what each of the action groupings are. If the reader is curious and wants to dive deeper, they can click on the treemap cell and it will provide a more nuanced view of all of the actions that occurred. I like the treemap, because it allows the reader to explore the data to their preference, and they aren’t overloaded with too many details at once.</p>
+		<p>However, this chart doesn’t explain well why each of those actions matter, and what the actions mean in the greater context of the Congress’ responsibilities. Therefore, I created the second graph to show the multi-step and back & forth of how bills are introduced, read, debated, amended, tabled, and then some are ultimately passed and signed into law. I used a connected scatterplot with an animated path to emphasize the bill’s path. I think that the animation really helps the reader understand how many steps a bill can take in Congress, and how long it spends at each step. 		</p>
+		<p>One of the most critical responsibilities of Congress is serving the public good. The actions they take have to be contextualized in how they are serving the community. Therefore, I thought it was important to make a chart showing the most frequent bill topics. This helps the reader get a better sense of what all of the Congressional actions mean for them. I used a ring chart to show the relative proportion of each bill topic introduced. I also chose the ring chart to add diversity to the types of charts shown. If I had more time, I would also want to explore using a bubble chart to display more of the bill topics, for ex. The top 50 or 100 bill topics explored. I didn’t have time to re-parse the data and change the format into a bubble chart, but I think the bubble chart could be an even more effective visual for this topic. </p>
+		<p>Finally, I wanted to show who was making these decisions, and how long they had been in office. The beeswarm chart shows how long each representative has served in the House and Senate, respectively. The bubble color represents the party of the representative (blue for Democrat and red for Republican). I originally had an x-axis indicating what axis the representative served, but after receiving reader feedback, I removed the axis because it did not provide additional information to the reader. The beeswarm chart allows the reader to see at a glance that the House and Congress are mostly Democratic, and that some representatives have served in office for a very long period of time. This helps to give the reader a snapshot of who is making these decisions about what bills to introduce and pass into law. If I had more time, I would want to explore building a chloropleth map that overlays the bubbles onto a physical location in Illinois of the district the representative serves.  </p>
+
+    </div>
+</body>
+    <script src="https://d3js.org/d3.v7.js"></script> 
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+	<script src="https://unpkg.com/d3-v6-tip@1.0.6/build/d3-v6-tip.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bumbeishvili/d3-tip-for-v6@4/d3-tip.min.css">
+    <!-- <script src="actions-packed.js"></script>  -->
+    <script src="partition.js"></script> 
+	<script src="scatterplot.js"></script> 
+    <script src="ring.js"></script>
+    <script src="beeswarm.js"></script> 
+   

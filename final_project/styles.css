@@ -1,0 +1,104 @@
+  body {
+    margin-left: 80px;
+    margin-right: 50px;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+  }
+
+  div{
+    align-items: center
+  }
+
+  h1 {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  h2 {
+    background-color: "gray";
+    font-size: 15px;
+    padding: 20px;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+  }
+  h4 {
+    font-size: 15px;
+    font-weight: normal;
+    color: #000000;
+    text-align: center;
+  }
+
+  h3 {
+    color:"black";
+    font-size: 15px;
+    font-weight: bold;
+  }
+  
+  p {
+    font-size: 13.5px;
+    color:gray;
+  }
+
+  .container {
+    width: 1000px;
+    margin: 0 auto;
+  }
+
+  svg {
+    max-height: 100vh;
+  }
+
+  .svg-tooltip {
+    background: rgba(69, 77, 93, .9);
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    font-size: 12px;
+    line-height: 12px;
+    text-transform: none;
+    max-width: 1000px;
+    max-height: 60px;
+    padding: 1rem;
+    position: absolute;
+    text-overflow: ellipsis;
+    white-space: pre;
+    z-index: 300;
+    visibility: hidden;
+  }
+
+  .domain {
+    display: none;
+  }
+  
+  line {
+    stroke: #ddd;
+  }
+
+  svg text {
+    font-size: 12px;
+  }
+  
+  .ring svg text {
+    font-size: 12px;
+  }
+  
+  .x-axis text {
+    transform: translateY(5px);
+  }
+  
+  .y-axis text {
+    transform: translateX(-5px);
+  }
+
+  foreignObject p {
+    font-size: 12px;
+  }
+
+  .axis {
+    font: 15px sans-serif;
+    }
+
+ 

@@ -1,11 +1,11 @@
 (function bar(){
-let height = 400,
-    width = 600,
-    margin = ({ top: 25, right: 30, bottom: 35, left: 40 });
+let height = 300,
+    width = 400,
+    margin = ({top: 25, right: 30, bottom: 35, left: 40});
 
 const svg = d3.select("#chart1")
     .append("svg")
-    .attr("viewbox", [0, 0, width, height]);
+    .attr("viewBox", [0, 0, width, height]);
 
 d3.csv("counts_death.csv").then(data => {
     for (let d of data) {
